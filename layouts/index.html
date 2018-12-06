@@ -12,12 +12,10 @@
 
   <!-- Content from the _index.html -->
   <div class="row">
-    <div class="col">
+    <div class="col-5">
       <div class="card">
-        <div class="card-body text-center">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text"> {{ .Page.Content }}</p>
-          <a href="#" class="card-link">Another link</a>
+        <div class="card-body">
+          <p> {{ .Page.Content }}</p>
         </div>
       </div>
     </div>
@@ -26,12 +24,12 @@
     <div class="col">
       <div class="card">
         <div class="card-body text-center">
-          <h5 class="card-title">Characters</h5>
+          <h4 class="card-title">Characters</h4>
 
           {{ range where (.Pages.ByParam "sort-order") "Type" "character" }}
           <article>
-            <a href="{{ .Permalink }}">
-              <h5>{{ .Title }}</h5>
+            <a class="card-link" href="{{ .Permalink }}">
+              {{ .Title }}
             </a>
 
             <div>
@@ -40,8 +38,6 @@
             </div>
           </article>
           {{ end }}
-
-          <a href="#" class="card-link">Another link</a>
         </div>
       </div>
     </div>
@@ -50,11 +46,12 @@
     <div class="col">
       <div class="card">
         <div class="card-body text-center">
-          <h5 class="card-title">Card title</h5>
+          <h4 class="card-title">Chapters</h4>
+
           {{ range where (.Pages.ByParam "sort-order") "Type" "chapter"}}
           <article>
-            <a href="{{ .Permalink }}">
-              <h5>{{ .Title }}</h5>
+            <a class="card-link" href="{{ .Permalink }}">
+              {{ .Title }}
             </a>
 
             {{ if .Params.subtitle }}
@@ -67,7 +64,6 @@
             </div>
           </article>
           {{ end }}
-          <a href="#" class="card-link">Another link</a>
         </div>
       </div>
     </div>
