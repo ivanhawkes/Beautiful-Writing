@@ -3,16 +3,16 @@
 
 name = "Beautiful Writing"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
-tags = []
-features = []
+licenselink = "https://github.com/ivanhawkes/Beautiful-Writing/blob/master/LICENSE"
+description = "A theme to aid in writing stories. Based on the Hugo Beautiful theme."
+homepage = "http://hawkes.info/"
+tags = ["minimal", "responsive"]
+features = ["story", "minimal", "responsive"]
 min_version = "0.41"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Ivan Hawkes"
+  homepage = "http://hawkes.info/"
 
 # If porting an existing theme
 [original]
