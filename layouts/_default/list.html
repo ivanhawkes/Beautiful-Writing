@@ -6,19 +6,19 @@
 		<div class="row topspace">
 			<div class="col-sm-8 col-sm-offset-2">
 
-                {{ range (.Pages.ByParam "sort-order") }}
+				{{ range (.Pages.ByParam "sort-order") }}
 				<article class="post">
 					<header class="entry-header">
 						<h1 class="entry-title"><a href="{{ .Permalink }}" rel="bookmark">{{ .Title }}</a></h1>
 					</header>
-                    <div class="entry-meta">
-                        <span class="lead"><time class="lead" date="{{ .Date.Format "01/02/2006" }}">{{ .Date.Format "01/02/2006" }}</time></span>
-                    </div>
-                    <div class="entry-content">
+					<div class="entry-meta">
+						<span class="lead"><time class="lead" date="{{ .Date.Format "01/02/2006" }}">{{ .Date.Format "01/02/2006" }}</time></span>
+					</div>
+					<div class="entry-content">
 						{{ .Content }}
 					</div>
 				</article>
-                {{ end }}
+				{{ end }}
 
 			</div>
 		</div>

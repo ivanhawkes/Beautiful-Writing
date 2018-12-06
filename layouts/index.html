@@ -1,61 +1,76 @@
 {{ define "main" }}
 
-<div class="jumbotron text-center">
-  <h1>{{ .Page.Title }}</h1>
-  <p class="lead">Resize this responsive page to see the effect!</p> 
-</div>
-  
 <div class="container">
   <div class="row">
-      <div class="row">
-          <div class="col">
-          <h2>_index Page Content Below This</h2>
-          {{ .Page.Content }}
-        </div>
-    
-    <div class="col">
-      <div>
-        <h4>Characters</h4>
+    <div class="col-sm-12">
+      <div class="jumbotron text-center">
+        <h1>{{ .Page.Title }}</h1>
+        <p class="lead">Resize this responsive page to see the effect!</p>
       </div>
-      <div>
-        {{ range where (.Pages.ByParam "sort-order") "Type" "character" }}
+    </div>
+  </div>
+
+  <!-- Content from the _index.html -->
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text"> {{ .Page.Content }}</p>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- List of characters -->
+    <div class="col">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Characters</h5>
+
+          {{ range where (.Pages.ByParam "sort-order") "Type" "character" }}
           <article>
             <a href="{{ .Permalink }}">
               <h5>{{ .Title }}</h5>
             </a>
 
             <div>
-              {{ if .Params.summary }}{{ .Params.summary }}{{ else }}<p>Missing a summary. Please add one to the markdown.</p>{{ end }}
+              {{ if .Params.summary }}{{ .Params.summary }}{{ else }}<p>Missing a summary. Please add one to the
+                markdown.</p>{{ end }}
             </div>
           </article>
-        {{ end }}
+          {{ end }}
+
+          <a href="#" class="card-link">Another link</a>
+        </div>
       </div>
     </div>
 
+    <!-- List of chapters -->
     <div class="col">
-        <div>
-            <h4>Chapters</h4>
-        </div>
-        <div>
-        {{ range where (.Pages.ByParam "sort-order") "Type" "chapter"}}
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Card title</h5>
+          {{ range where (.Pages.ByParam "sort-order") "Type" "chapter"}}
           <article>
             <a href="{{ .Permalink }}">
               <h5>{{ .Title }}</h5>
             </a>
 
             {{ if .Params.subtitle }}
-              <p>{{ .Params.subtitle }}</p>
+            <p>{{ .Params.subtitle }}</p>
             {{ end }}
 
             <div>
-              {{ if .Params.summary }}{{ .Params.summary }}{{ else }}<p>Missing a summary. Please add one to the markdown.</p>{{ end }}
+              {{ if .Params.summary }}{{ .Params.summary }}{{ else }}<p>Missing a summary. Please add one to the
+                markdown.</p>{{ end }}
             </div>
           </article>
-        {{ end }}
+          {{ end }}
+          <a href="#" class="card-link">Another link</a>
+        </div>
       </div>
     </div>
-
-  </div>
 
   </div>
 </div>
